@@ -41,7 +41,7 @@ namespace TestProjectMyAreas
             List<Employee> employees = new List<Employee>();
             foreach (var emp in employees)
             {
-                Assert.AreEqual(emp.Name, null, "Null present");
+                Assert.IsNotNull(emp.Name);
             }
         }
     }
