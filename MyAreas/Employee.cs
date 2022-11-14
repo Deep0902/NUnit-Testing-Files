@@ -24,6 +24,7 @@ namespace MyAreas
                 new Employee{Id = 106, Name="Daphine", Salary=65000, Gender="F"},
                 new Employee{Id = 107, Name="Wennie", Salary=50000, Gender="M"}
             };
+            emplist.Add(null);
             return emplist;
         }
     }
