@@ -27,8 +27,8 @@ namespace TestProjectMyAreas
         public void Check_Gender()
         {
             Employee emp = new Employee();
-            List<Employee> employees = emp.GetEmployees();
-            foreach (var e in employees)
+            List<Employee> emplist = emp.GetEmployees();
+            foreach (var e in emplist)
             {
                 Assert.IsTrue(e.Gender == "M" || e.Gender == "F");
             }
@@ -38,9 +38,10 @@ namespace TestProjectMyAreas
         [Test]
         public void Check_Name_Null()
         {
-            List<Employee> employees = new List<Employee>();
-            foreach (var emp in employees)
-            {
+            Employee emp = new Employee();
+            List<Employee> emplist = emp.GetEmployees();
+            foreach (var e in emplist)
+            { 
                 Assert.IsNotNull(emp.Name);
             }
         }
