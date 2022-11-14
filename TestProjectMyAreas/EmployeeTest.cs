@@ -8,16 +8,17 @@ namespace TestProjectMyAreas
 {
     public class EmployeeTest
     {
-        Employee employee;
+        //Employee employee;
         public void setup()
         {
-            employee = new Employee();
+            //employee = new Employee();
         }
         //1. Write test case to check collections is having null employee
         [Test]
         public void Check_For_Null()
         {
-            List<Employee> employees = new List<Employee>();
+            Employee emp = new Employee();
+            List<Employee> employees = emp.GetEmployees();
             CollectionAssert.AllItemsAreNotNull(employees,"Contains null records");
         }
         
@@ -25,10 +26,11 @@ namespace TestProjectMyAreas
         [Test]
         public void Check_Gender()
         {
-            List<Employee> employees = new List<Employee>();
-            foreach (Employee emp in employees)
+            Employee emp = new Employee();
+            List<Employee> employees = emp.GetEmployees();
+            foreach (var e in employees)
             {
-                Assert.AreEqual(emp.Gender, "M","Gender only males");
+                Assert.IsTrue(e.Gender == "M" || e.Gender == "F");
             }
         }
         
@@ -37,9 +39,9 @@ namespace TestProjectMyAreas
         public void Check_Name_Null()
         {
             List<Employee> employees = new List<Employee>();
-            foreach (Employee emp in employees)
+            foreach (var emp in employees)
             {
-                Assert.AreEqual(emp.Name, null,"Null present");
+                Assert.AreEqual(emp.Name, null, "Null present");
             }
         }
     }
